@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(./images/bg.jpg);
+    background-size: cover; /* Regola la scala */
+    background-position: 50% 70%; /* Posiziona in alto a destra */
+    min-height: 100vh;
+}
+
+.container{
+    display: flex;
+}
+
+.main-title{
+    color: white;
+}
