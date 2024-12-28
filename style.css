@@ -7,14 +7,31 @@
 body{
     background-image: url(./images/bg.jpg);
     background-size: cover; /* Regola la scala */
-    background-position: 50% 70%; /* Posiziona in alto a destra */
+    background-position: 50% 60%; /* Posiziona in alto a destra */
     min-height: 100vh;
 }
 
 .container{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .main-title{
     color: white;
+}
+
+.card{
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+.icon{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.number{
+    display: block;
 }
