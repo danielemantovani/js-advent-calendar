@@ -125,3 +125,15 @@ const source = [
         "url": "images/dance.gif"
     }
 ];
+
+const emojiMap = {
+    "ico-neve": "❄️",
+    "ico-albero": "🎄",
+    "ico-fiocco": "🎀",
+    "ico-stella": "🌟",
+    "ico-omino": "🎅",
+    "ico-pupazzo": "⛄",
+    "ico-caramella": "🍭",
+    "ico-calza": "🎁"
+};
+
