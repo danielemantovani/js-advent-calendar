@@ -16,8 +16,8 @@ const source = [
     },
     {
         "type": "image",
-        "icon": "ico-stella",
-        "url": "images/homealone.gif"
+        "icon": "ico-caramella",
+        "url": "images/dance.gif"
     },
     {
         "type": "text",
@@ -95,24 +95,14 @@ const source = [
         "text": "È tempo di panettone, ma da dove viene questo nome? È quello di un dolce, il Pan di Toni inventato dall’aiuto cuoco della famiglia Sforza"
     },
     {
-        "type": "text",
-        "icon": "ico-calza",
-        "text": "Ma Babbo Natale abita in Puglia? Il nostro barbuto personaggio si ispira a San Nicola di Myra, un vescovo le cui spoglie sono custodite a Bari"
-    },
-    {
-        "type": "image",
-        "icon": "ico-caramella",
-        "url": "images/poltrona.gif"
-    },
-    {
         "type": "image",
         "icon": "ico-caramella",
         "url": "images/spongebob.gif"
     },
     {
-        "type": "image",
-        "icon": "ico-neve",
-        "url": "images/elf.gif"
+        "type": "text",
+        "icon": "ico-calza",
+        "text": "Ma Babbo Natale abita in Puglia? Il nostro barbuto personaggio si ispira a San Nicola di Myra, un vescovo le cui spoglie sono custodite a Bari"
     },
     {
         "type": "text",
@@ -121,8 +111,18 @@ const source = [
     },
     {
         "type": "image",
+        "icon": "ico-neve",
+        "url": "images/elf.gif"
+    },
+    {
+        "type": "image",
         "icon": "ico-caramella",
-        "url": "images/dance.gif"
+        "url": "images/poltrona.gif"
+    },
+    {
+        "type": "image",
+        "icon": "ico-stella",
+        "url": "images/homealone.gif"
     }
 ];
 

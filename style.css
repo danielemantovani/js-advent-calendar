@@ -9,13 +9,16 @@ body{
     background-size: cover; 
     background-position: 50% 60%; /* posiziona in alto a destra */
     min-height: 100vh;
+    font-family: 'livvic', sans-serif;
 }
 
 .main-title{
-    width: 70%;
+    width: 60%;
     color: white;
+    font-size: 3rem;
     text-align: center;
     padding: 30px;
+    margin-left: 60px;
 }
 
 /* Container card */
@@ -24,18 +27,18 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     width: 60%;
     margin-left: 60px;
 }
 
 .card {
-    flex: 1 1 calc(15.5% - 20px); 
+    flex: 1 1 calc((100% / 6) - 15px);
     background-color: brown;
     font-size: 20px;
     color: white;
     border: 1px solid white;
-    padding: 20px 40px;
+    padding: 15px 30px;
     border-radius: 8px;
     text-align: center;
     cursor: pointer;
@@ -43,12 +46,19 @@ body{
 }
 
 .special{
-    flex: 1 1 100%;
+    flex: 0 0 100%;
     background-color: #dab775;
 }
 
 .card:hover {
     transform: scale(1.05);
+}
+
+.card.open {
+    background-color: rgba(0, 0, 0, 0.5); 
+    pointer-events: none; /* Disabilita il clic */
+    transform: none; /* Rimuove l'effetto hover */
+    box-shadow: none;
 }
 
 .icon{

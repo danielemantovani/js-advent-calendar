@@ -4,13 +4,45 @@
 const calendarContainer = document.querySelector('.container');
 // console.log(calendarContainer);
 
+// recupera lo stato delle card aperte dal localStorage
+let openedCards = JSON.parse(localStorage.getItem('openedCards')) || [];
+
+// funzione per salvare lo stato nel localStorage
+function saveOpenedCards() {
+    localStorage.setItem('openedCards', JSON.stringify(openedCards));
+}
+
+// aggiorna lo stato delle card aperte al caricamento della pagina
+function updateOpenedCards() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card) => {
+        if (openedCards.includes(card.dataset.id)) {
+            card.classList.add('open'); // aggiunge la classe 'open' per lo stile
+            card.removeEventListener('click', handleCardClick); // rimuove il listener per evitare clic
+        }
+    });
+}
+
+// gestisce il click sulla card
+function handleCardClick(event) {
+    const card = event.currentTarget;
+    const cardId = card.dataset.id;
+
+    // cambia lo stile e salva lo stato
+    card.classList.add('open');
+    if (!openedCards.includes(cardId)) {
+        openedCards.push(cardId);
+        saveOpenedCards(); // salva nel localStorage
+    }
+}
+
 // genero dinamicamente le card da stampare in pagina
 source.forEach((curElem, index) => {
 
-    //creo l'elemento div contenitore della card
+    // creo l'elemento div contenitore della card
     const card = document.createElement('div');
-    card.classList.add('card'); //aggiungo all'elemento div la classe card
-    card.dataset.id = index + 1; //aggiungo un idenficiatore unico per ogni card
+    card.classList.add('card'); // aggiungo all'elemento div la classe card
+    card.dataset.id = index + 1; // aggiungo un idenficiatore unico per ogni card
 
     // creo span dove inserire l'icona
     const icon = document.createElement('span');
@@ -28,13 +60,15 @@ source.forEach((curElem, index) => {
     }
 
     // inserisco gli elementi che compongono la card nel DOM
-    card.append(icon, number)
+    card.append(icon, number);
+
+    // aggiungi l'evento click per gestire lo stato delle card
+    card.addEventListener('click', handleCardClick);
 
     // stampo la card in pagina
     calendarContainer.append(card);
 
-
-    //Modale
+    // Modale
 
     // prelevo gli elementi del modale
     const modal = document.querySelector('.modal');
@@ -80,7 +114,8 @@ source.forEach((curElem, index) => {
 
 });
 
-
+// aggiorna le card già aperte
+updateOpenedCards();
 
 
 
