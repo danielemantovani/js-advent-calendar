@@ -117,6 +117,28 @@ source.forEach((curElem, index) => {
 // aggiorna le card già aperte
 updateOpenedCards();
 
+// Logica pulsante reset
+
+const resetButton = document.getElementById('reset-button');
+
+// Gestione del click sul pulsante di reset
+resetButton.addEventListener('click', () => {
+    // Svuota il localStorage
+    localStorage.removeItem('openedCards');
+
+    // Rimuovi lo stile "aperto" da tutte le card
+    document.querySelectorAll('.card').forEach((card) => {
+        card.classList.remove('open');
+        card.addEventListener('click', handleCardClick);
+    });
+
+    // Nascondi il modale se è aperto
+    const modal = document.querySelector('.modal');
+    const overlay = document.querySelector('.overlay');
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+});
+
 
 
 

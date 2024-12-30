@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+/* Utilities */
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
 body{
     background-image: url(./images/bg.jpg);
     background-size: cover; 
@@ -113,3 +119,20 @@ body{
 .hidden {
     display: none;
 }
+
+/* Tasto per il reset */
+.reset-button {
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    width: 70px;
+    margin: 40px 20px;
+}
+
+.reset-button:hover {
+    background-color: darkred;
+}
+
