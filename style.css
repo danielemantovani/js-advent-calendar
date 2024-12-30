@@ -25,6 +25,9 @@ body{
     text-align: center;
     padding: 30px;
     margin-left: 60px;
+    background: linear-gradient(90deg, #038df0, #efba58); /* Gradiente al testo */
+    -webkit-background-clip: text; /* Applica il gradiente al testo */
+    -webkit-text-fill-color: transparent; /* Rende trasparente il riempimento del testo */
 }
 
 /* Container card */
