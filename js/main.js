@@ -5,9 +5,9 @@ const calendarContainer = document.querySelector('.container');
 // console.log(calendarContainer);
 
 // genero dinamicamente le card da stampare in pagina
-source.forEach((curElem, index)=> {
+source.forEach((curElem, index) => {
 
-     //creo l'elemento div contenitore della card
+    //creo l'elemento div contenitore della card
     const card = document.createElement('div');
     card.classList.add('card'); //aggiungo all'elemento div la classe card
     card.dataset.id = index + 1; //aggiungo un idenficiatore unico per ogni card
@@ -23,12 +23,59 @@ source.forEach((curElem, index)=> {
     number.textContent = index + 1;
 
     // inserisco gli elementi che compongono la card nel DOM
-    card.appendChild(icon);
-    card.appendChild(number);
+    card.append(icon, number)
 
     // stampo la card in pagina
-    calendarContainer.appendChild(card);
+    calendarContainer.append(card);
+
+
+    //Modale
+
+    // prelevo gli elementi del modale
+    const modal = document.querySelector('.modal');
+    const modalBody = document.querySelector('.modal-body');
+    const closeModalBtn = document.querySelector('.close-btn');
+    const overlay = document.querySelector('.overlay');
+
+    card.addEventListener("click", () => {
+        const cardId = card.dataset.id;
+        // console.log(cardId);
+        const cardData = source[cardId - 1];
+        // console.log(cardData);
+
+        // inserisco il contenuto nel modale
+        modalBody.innerHTML = ""; // mi assicuro che il modale sia vuoto ad ogni apertura
+
+        if (cardData.type === "text") {
+            const text = document.createElement('p');
+            text.textContent = cardData.text;
+            modalBody.append(text);
+        } else {
+            const img = document.createElement('img');
+            img.src = cardData.url;
+            modalBody.append(img);
+        }
+
+        // mostra il modale
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+
+        // chiusura del modale quando aperto
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
+
+    });
+
 });
+
+
 
 
 
