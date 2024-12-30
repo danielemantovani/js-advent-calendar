@@ -22,6 +22,11 @@ source.forEach((curElem, index) => {
     number.classList.add('number');
     number.textContent = index + 1;
 
+    // se è la card del 25, aggiungi la classe 'special'
+    if (index + 1 === 25) {
+        card.classList.add('special');
+    }
+
     // inserisco gli elementi che compongono la card nel DOM
     card.append(icon, number)
 

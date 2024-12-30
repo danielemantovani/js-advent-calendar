@@ -6,19 +6,9 @@
 
 body{
     background-image: url(./images/bg.jpg);
-    background-size: cover; /* Regola la scala */
-    background-position: 50% 60%; /* Posiziona in alto a destra */
+    background-size: cover; 
+    background-position: 50% 60%; /* posiziona in alto a destra */
     min-height: 100vh;
-}
-
-
-/* Container card */
-
-.container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 70%;
 }
 
 .main-title{
@@ -28,14 +18,37 @@ body{
     padding: 30px;
 }
 
-.card{
-    padding: 5px 30px;
-    text-align: center;
-    font-size: 30px;
-    color: white;
+/* Container card */
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 60%;
+    margin-left: 60px;
+}
+
+.card {
+    flex: 1 1 calc(15.5% - 20px); 
     background-color: brown;
-    margin: 10px;
+    font-size: 20px;
+    color: white;
+    border: 1px solid white;
+    padding: 20px 40px;
+    border-radius: 8px;
+    text-align: center;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.special{
+    flex: 1 1 100%;
+    background-color: #dab775;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .icon{
@@ -56,7 +69,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 700px;
-    background-color: #18413b;
+    background-color: brown;
     border-radius: 10px;
     z-index: 1000;
     text-align: center;
