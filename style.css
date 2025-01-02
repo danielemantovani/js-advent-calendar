@@ -63,7 +63,7 @@ body{
     transform: scale(1.05);
 }
 
-.card.open {
+.open {
     background-color: rgba(0, 0, 0, 0.5); 
     pointer-events: none; /* Disabilita il clic */
     transform: none; /* Rimuove l'effetto hover */
